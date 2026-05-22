@@ -1,0 +1,8 @@
+Initial release of rEFInd Config Editor for Windows (x86, x64, ARM64).
+
+- GUI editor for rEFInd 0.14.x `refind.conf` with friendly labels, tooltips, and doc links for every global option
+- Boot entry and submenu editors, raw config tab, and optional comment stripping
+- Theme browser with bundled catalog previews and one-click install from GitHub
+- Portable zip and Inno Setup installer per architecture
+
+Requires the .NET 8 Desktop Runtime.

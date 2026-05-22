@@ -1,0 +1,9 @@
+*.DS_Store
+bin/
+obj/
+publish/
+.vs/
+/.installer/Output/
+refind.conf
+.md/buildNotes.md
+.version/versionBuild
