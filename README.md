@@ -98,30 +98,21 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 
 | <h3>Light</h3> |
 |:---:|
-| ![Light](./.resources/scr/10.png) |
+| ![Light](./.resources/scr/9.png) |
 
 | <h3>Dark</h3> |
 |:---:|
-| ![Light](./.resources/scr/11.png) |
+| ![Light](./.resources/scr/10.png) |
 
 | <h3>Dracula Light</h3> |
 |:---:|
-| ![Light](./.resources/scr/12.png) |
+| ![Light](./.resources/scr/11.png) |
 
 | <h3>Dracula Dark</h3> |
 |:---:|
-| ![Light](./.resources/scr/13.png) |
+| ![Light](./.resources/scr/12.png) |
 
 </details>
-
-
-## Requirements
-
-- [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) (installers and portable builds are framework-dependent)
-
-## License
-
-MIT — see [LICENSE](LICENSE).
 
 
 ## Compatibility
