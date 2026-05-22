@@ -4,6 +4,8 @@
 
 Create a config with a gui with friendly names, tooltips, and references for each token. Includes some extras like theme management and a theme browser. Covers every setting listed on the [config file instruction page](https://www.rodsbooks.com/refind/configfile.html), with links for each. 
 
+**Wiki:** [Tokens](https://github.com/fosterbarnes/rEFIndConfigEditor/wiki#refind-configuration-tokens) · [Themes](https://github.com/fosterbarnes/rEFIndConfigEditor/wiki#refind-supported-themes)
+
 <!-- Quick Reference --
 version = 1.0.0
 
