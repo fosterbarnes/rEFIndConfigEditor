@@ -16,6 +16,7 @@
     <AssemblyVersion>$(VersionContents).0</AssemblyVersion>
     <FileVersion>$(VersionContents).0</FileVersion>
     <InformationalVersion>$(VersionContents)</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
   </PropertyGroup>
 
   <ItemGroup>

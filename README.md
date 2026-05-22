@@ -7,19 +7,19 @@ Create a config with a gui with friendly names, tooltips, and references for eac
 **Wiki:** [Tokens](https://github.com/fosterbarnes/rEFIndConfigEditor/wiki#refind-configuration-tokens) · [Themes](https://github.com/fosterbarnes/rEFIndConfigEditor/wiki#refind-supported-themes)
 
 <!-- Quick Reference --
-version = 1.0.0
+version = 1.0.1
 
-x64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorInstaller_v1.0.0_x64.exe
+x64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x64.exe
 
-x64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorPortable_v1.0.0_x64.zip
+x64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x64.zip
 
-x86Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorInstaller_v1.0.0_x86.exe
+x86Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x86.exe
 
-x86Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorPortable_v1.0.0_x86.zip
+x86Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x86.zip
 
-ARM64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorInstaller_v1.0.0_arm64.exe
+ARM64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_arm64.exe
 
-ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorPortable_v1.0.0_arm64.zip
+ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_arm64.zip
 -->
 
 <br><br>
@@ -33,9 +33,9 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 <table border="0">
 <tbody>
 <tr>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorInstaller_v1.0.0_x64.exe"><img src="./.resources/svg/download_x64.svg" width="180" height="auto" alt="x64 installer"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorInstaller_v1.0.0_x86.exe"><img src="./.resources/svg/download_x86.svg" width="180" height="auto" alt="x86 installer"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorInstaller_v1.0.0_arm64.exe"><img src="./.resources/svg/download_arm.svg" width="180" height="auto" alt="ARM64 installer"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x64.exe"><img src="./.resources/svg/download_x64.svg" width="180" height="auto" alt="x64 installer"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x86.exe"><img src="./.resources/svg/download_x86.svg" width="180" height="auto" alt="x86 installer"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_arm64.exe"><img src="./.resources/svg/download_arm.svg" width="180" height="auto" alt="ARM64 installer"/></a></td>
 </tr>
 </tbody>
 </table>
@@ -43,9 +43,9 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 <table border="0">
 <tbody>
 <tr>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorPortable_v1.0.0_x64.zip"><img src="./.resources/svg/download_portable_x64.svg" width="180" height="auto" alt="x64 portable"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorPortable_v1.0.0_x86.zip"><img src="./.resources/svg/download_portable_x86.svg" width="180" height="auto" alt="x86 portable"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.0/rEFIndConfigEditorPortable_v1.0.0_arm64.zip"><img src="./.resources/svg/download_portable_arm64.svg" width="180" height="auto" alt="ARM64 portable"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x64.zip"><img src="./.resources/svg/download_portable_x64.svg" width="180" height="auto" alt="x64 portable"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x86.zip"><img src="./.resources/svg/download_portable_x86.svg" width="180" height="auto" alt="x86 portable"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_arm64.zip"><img src="./.resources/svg/download_portable_arm64.svg" width="180" height="auto" alt="ARM64 portable"/></a></td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +100,7 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 
 | <h3>Light</h3> |
 |:---:|
-| ![Light](./.resources/scr/9.png) |
+| ![Light](./.resources/scr/1.png) |
 
 | <h3>Dark</h3> |
 |:---:|
