@@ -1,0 +1,34 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <Style Selector="Border.group-box">
+    <Setter Property="Background" Value="{DynamicResource ThemeFieldBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeMainBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Padding" Value="{x:Static ui:UiMetrics.GroupBoxPadding}" />
+    <Setter Property="Margin" Value="{x:Static ui:UiMetrics.GroupBoxMargin}" />
+  </Style>
+
+  <Style Selector="Border.group-box.nested">
+    <Setter Property="Padding" Value="{x:Static ui:UiMetrics.GroupBoxNestedPadding}" />
+    <Setter Property="Margin" Value="0" />
+  </Style>
+
+  <Style Selector="Border.group-box TextBlock.group-box-header">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontSection}" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMainTextBrush}" />
+    <Setter Property="Background" Value="{DynamicResource ThemeFieldBgBrush}" />
+    <Setter Property="Margin" Value="{x:Static ui:UiMetrics.GroupBoxHeaderMargin}" />
+    <Setter Property="Padding" Value="1,0" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+  </Style>
+
+  <Style Selector="Border.group-box.nested TextBlock.group-box-header">
+    <Setter Property="Margin" Value="{x:Static ui:UiMetrics.GroupBoxNestedHeaderMargin}" />
+  </Style>
+
+</Styles>

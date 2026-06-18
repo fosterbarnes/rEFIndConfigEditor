@@ -7,19 +7,31 @@ Create a config with a gui with friendly names, tooltips, and references for eac
 **Wiki:** [Tokens](https://github.com/fosterbarnes/rEFIndConfigEditor/wiki#refind-configuration-tokens) · [Themes](https://github.com/fosterbarnes/rEFIndConfigEditor/wiki#refind-supported-themes)
 
 <!-- Quick Reference --
-version = 1.0.1
+version = 1.1.0
 
-x64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x64.exe
+x64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x64.exe
 
-x64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x64.zip
+x64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x64.zip
 
-x86Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x86.exe
+x86Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x86.exe
 
-x86Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x86.zip
+x86Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x86.zip
 
-ARM64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_arm64.exe
+ARM64Installer = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-arm64.exe
 
-ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_arm64.zip
+ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-arm64.zip
+
+osxX64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_macOS-intel.zip
+
+osxArm64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_macOS-arm.zip
+
+linuxAmd64Deb = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_debian-amd64.deb
+
+linuxArm64Deb = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_debian-arm64.deb
+
+linuxAmd64Rpm = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_fedora-amd64.rpm
+
+linuxArm64Rpm = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_fedora-arm64.rpm
 -->
 
 <br><br>
@@ -30,12 +42,14 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 
 ## Downloads
 
+### Windows
+
 <table border="0">
 <tbody>
 <tr>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x64.exe"><img src="./.resources/svg/download_x64.svg" width="180" height="auto" alt="x64 installer"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_x86.exe"><img src="./.resources/svg/download_x86.svg" width="180" height="auto" alt="x86 installer"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorInstaller_v1.0.1_arm64.exe"><img src="./.resources/svg/download_arm.svg" width="180" height="auto" alt="ARM64 installer"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x64.exe"><img src="./.resources/svg/download_x64.svg" width="180" height="auto" alt="x64 installer"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x86.exe"><img src="./.resources/svg/download_x86.svg" width="180" height="auto" alt="x86 installer"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-arm64.exe"><img src="./.resources/svg/download_arm.svg" width="180" height="auto" alt="ARM64 installer"/></a></td>
 </tr>
 </tbody>
 </table>
@@ -43,12 +57,91 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 <table border="0">
 <tbody>
 <tr>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x64.zip"><img src="./.resources/svg/download_portable_x64.svg" width="180" height="auto" alt="x64 portable"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_x86.zip"><img src="./.resources/svg/download_portable_x86.svg" width="180" height="auto" alt="x86 portable"/></a></td>
-<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.0.1/rEFIndConfigEditorPortable_v1.0.1_arm64.zip"><img src="./.resources/svg/download_portable_arm64.svg" width="180" height="auto" alt="ARM64 portable"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x64.zip"><img src="./.resources/svg/download_portable_x64.svg" width="180" height="auto" alt="x64 portable"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-x86.zip"><img src="./.resources/svg/download_portable_x86.svg" width="180" height="auto" alt="x86 portable"/></a></td>
+<td align="center" valign="top"><a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_windows-arm64.zip"><img src="./.resources/svg/download_portable_arm64.svg" width="180" height="auto" alt="ARM64 portable"/></a></td>
 </tr>
 </tbody>
 </table>
+
+### macOS
+
+<table border="0"><tbody><tr>
+<td align="center" valign="top">
+<a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_macOS-intel.zip">
+<img src="./.resources/svg/download_appleIntel.svg" width="180" height="auto" alt="Intel portable"/></a></td>
+<td align="center" valign="top">
+<a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_macOS-arm.zip"><img src="./.resources/svg/download_appleArm.svg" width="180" height="auto" alt="Apple Silicon portable"/></a></td>
+</tr></tbody></table>
+
+> macOS and Linux packages ship with the next Avalonia release; Windows v1.0.0 links above remain current.
+
+### Debian Linux (Debian 12–13, Ubuntu 24.04–26.04)
+
+<details>
+<summary>[Click to Expand]</summary>
+
+#### Install dependencies:
+
+Add the Microsoft package signing key to your list of trusted keys and add the package repository, then install .NET 10 runtime
+
+```bash
+wget https://packages.microsoft.com/config/debian/13/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update && sudo apt-get install -y dotnet-runtime-10.0
+```
+
+Reference: [.NET 10 runtime](https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian)
+
+#### Install rEFInd Config Editor:
+
+amd64:
+
+```bash
+wget https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_debian-amd64.deb
+sudo apt install ./rEFIndConfigEditor_v1.1.0_debian-amd64.deb
+```
+
+arm64:
+
+```bash
+wget https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_debian-arm64.deb
+sudo apt install ./rEFIndConfigEditor_v1.1.0_debian-arm64.deb
+```
+</details>
+
+### Fedora Linux (Fedora 43–44)
+
+<details>
+<summary>[Click to Expand]</summary>
+
+#### Install dependencies:
+
+Install .NET 10 runtime from Fedora repos:
+
+```bash
+sudo dnf install -y dotnet-runtime-10.0
+```
+
+Reference: [.NET 10 runtime](https://learn.microsoft.com/en-us/dotnet/core/install/linux-fedora)
+
+#### Install rEFInd Config Editor:
+
+amd64:
+
+```bash
+wget https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_fedora-amd64.rpm
+sudo dnf install ./rEFIndConfigEditor_v1.1.0_fedora-amd64.rpm
+```
+
+arm64:
+
+```bash
+wget https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_fedora-arm64.rpm
+sudo dnf install ./rEFIndConfigEditor_v1.1.0_fedora-arm64.rpm
+```
+</details>
 
 ## Tabs
 
@@ -100,7 +193,7 @@ ARM64Portable = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 
 | <h3>Light</h3> |
 |:---:|
-| ![Light](./.resources/scr/1.png) |
+| ![Light](./.resources/scr/9.png) |
 
 | <h3>Dark</h3> |
 |:---:|

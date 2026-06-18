@@ -1,0 +1,57 @@
+name: macOS
+
+on:
+  workflow_dispatch:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-latest
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+    strategy:
+      matrix:
+        include:
+          - arch: arm64
+            asset_tag: macOS-arm
+          - arch: x64
+            asset_tag: macOS-intel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .nuget/packages
+          key: nuget-${{ hashFiles('**/*.csproj', '**/Directory.Build.props') }}
+          restore-keys: |
+            nuget-
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - id: version
+        run: echo "value=$(tr -d '\r\n' < .version/version)" >> $GITHUB_OUTPUT
+      - name: Build release package
+        run: pwsh ./.scripts/.buildAll.ps1 -${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rEFIndConfigEditor_v${{ steps.version.outputs.value }}_${{ matrix.asset_tag }}
+          path: publish/rEFIndConfigEditor_v${{ steps.version.outputs.value }}_${{ matrix.asset_tag }}.zip
+          if-no-files-found: error
+      - name: Add to latest release
+        if: inputs.add_to_latest_release
+        uses: ./.github/actions/upload-latest-release
+        with:
+          asset_path: publish/rEFIndConfigEditor_v${{ steps.version.outputs.value }}_${{ matrix.asset_tag }}.zip
+          gh_package: none

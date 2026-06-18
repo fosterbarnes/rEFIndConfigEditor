@@ -1,7 +1,10 @@
 #define AppName "rEFIndConfigEditor"
 #define AppDisplayName "rEFInd Config Editor (ARM64)"
 #ifndef AppVersion
-#define AppVersion "0.0.0"
+#define AppVersion "1.1.0"
+#endif
+#ifndef AppCopyright
+#define AppCopyright "Copyright © 2026 Foster Barnes"
 #endif
 #ifndef AppPublisher
 #define AppPublisher "fosterbarnes"
@@ -12,6 +15,12 @@
 #ifndef SetupIconFile
 #define SetupIconFile "..\.resources\icon\refind.ico"
 #endif
+#ifndef WizardSmallImageFile
+#define WizardSmallImageFile "wizard\installer-wizard-small.png"
+#endif
+#ifndef WizardImageFile
+#define WizardImageFile "wizard\installer-wizard-large.png"
+#endif
 #define ExeName "rEFIndConfigEditor.exe"
 
 [Setup]
@@ -19,6 +28,7 @@ AppId={{C4E8F1A2-3B5D-4E6F-9A0C-1D2E3F4A5B6C}
 AppName={#AppName}
 UninstallDisplayName={#AppDisplayName}
 AppVersion={#AppVersion}
+AppCopyright={#AppCopyright}
 DisableDirPage=auto
 AppPublisher={#AppPublisher}
 AppPublisherURL={#AppURL}
@@ -35,6 +45,8 @@ PrivilegesRequiredOverridesAllowed=commandline
 OutputDir=Output
 OutputBaseFilename=rEFIndConfigEditor-arm64-installer
 SetupIconFile={#SetupIconFile}
+WizardSmallImageFile={#WizardSmallImageFile}
+WizardImageFile={#WizardImageFile}
 SolidCompression=yes
 WizardStyle=classic dark
 
@@ -60,3 +72,5 @@ Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#ExeName}"; Tasks: desktopic
 
 [Run]
 Filename: "{app}\{#ExeName}"; Description: "{cm:LaunchProgram,{#StringChange(AppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+#include "rEFIndConfigEditor.uninstall.iss"

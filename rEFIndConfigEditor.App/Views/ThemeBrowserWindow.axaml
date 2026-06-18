@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI"
+        x:Class="rEFIndConfigEditor.Views.ThemeBrowserWindow"
+        Title="Theme browser"
+        Width="960"
+        Height="760"
+        MinWidth="640"
+        MinHeight="520"
+        WindowStartupLocation="CenterOwner"
+        CanResize="True">
+  <DockPanel>
+    <Border DockPanel.Dock="Top" Padding="8,6">
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Grid.Column="0"
+                    Orientation="Horizontal"
+                    Spacing="12"
+                    VerticalAlignment="Center">
+          <TextBlock Text="Category:" VerticalAlignment="Center" Classes="setting-label" />
+          <ComboBox x:Name="CategoryFilter" MinWidth="220" MinHeight="{x:Static ui:UiMetrics.ControlHeight}" />
+          <TextBlock Text="Sort by:" VerticalAlignment="Center" Classes="setting-label" />
+          <ComboBox x:Name="SortBy" MinWidth="180" MinHeight="{x:Static ui:UiMetrics.ControlHeight}" />
+        </StackPanel>
+        <TextBox x:Name="SearchBox"
+                 Grid.Column="1"
+                 PlaceholderText="Search"
+                 Width="{x:Static ui:UiMetrics.SearchBoxWidth}"
+                 MinHeight="{x:Static ui:UiMetrics.SearchBoxHeight}" />
+      </Grid>
+    </Border>
+    <Border DockPanel.Dock="Bottom" Classes="app-status-bar" Padding="{x:Static ui:UiMetrics.StatusFooterPadding}">
+      <Grid ColumnDefinitions="*,Auto,Auto">
+        <TextBlock x:Name="PageLabel"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Classes="status-text" />
+        <Button x:Name="PrevButton"
+                Grid.Column="1"
+                Content="Previous"
+                Margin="0,0,8,0" />
+        <Button x:Name="NextButton"
+                Grid.Column="2"
+                Content="Next" />
+      </Grid>
+    </Border>
+    <ScrollViewer x:Name="CardsScroll"
+                  HorizontalScrollBarVisibility="Disabled"
+                  VerticalScrollBarVisibility="Auto">
+      <StackPanel x:Name="CardsPanel" Spacing="8" Margin="8" />
+    </ScrollViewer>
+    <Popup x:Name="SearchPopup"
+           PlacementTarget="{Binding #SearchBox}"
+           Placement="Bottom"
+           IsLightDismissEnabled="True">
+      <ListBox x:Name="SearchResults"
+               MinWidth="{x:Static ui:UiMetrics.SearchBoxWidth}"
+               MaxHeight="{x:Static ui:UiMetrics.SearchDropMaxHeight}" />
+    </Popup>
+  </DockPanel>
+</Window>

@@ -1,0 +1,58 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <Style Selector="DataGrid.file-list-grid">
+    <Setter Property="FontFamily" Value="{DynamicResource ThemeFontMonoFamily}" />
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeEntryListTextBrush}" />
+    <Setter Property="Background" Value="{DynamicResource ThemeEntryListBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeEntryListBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="RowHeight" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource ThemeEntryListBorderBrush}" />
+    <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridColumnHeader">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeEntryListTextBrush}" />
+    <Setter Property="Background" Value="{DynamicResource ThemeEntryListBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeEntryListBorderBrush}" />
+    <Setter Property="Padding" Value="{x:Static ui:UiMetrics.DataGridCellPadding}" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridCell">
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Padding" Value="{x:Static ui:UiMetrics.DataGridCellPadding}" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridCell TextBlock">
+    <Setter Property="Margin" Value="0" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridCell /template/ Rectangle#PART_RightGridLine">
+    <Setter Property="IsVisible" Value="False" />
+    <Setter Property="Width" Value="0" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridCell:focus /template/ Grid#FocusVisual">
+    <Setter Property="IsVisible" Value="False" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridCell:focus /template/ Panel#FocusVisual">
+    <Setter Property="IsVisible" Value="False" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridCell:current /template/ Rectangle#CurrencyVisual">
+    <Setter Property="IsVisible" Value="False" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridRow:selected">
+    <Setter Property="Background" Value="{DynamicResource ThemeFieldBgBrush}" />
+  </Style>
+
+  <Style Selector="DataGrid.file-list-grid DataGridRow:selected DataGridCell">
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+
+</Styles>

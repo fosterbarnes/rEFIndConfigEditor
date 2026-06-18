@@ -1,0 +1,79 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <Style Selector="Grid.settings-panel">
+    <Setter Property="Margin" Value="{x:Static ui:UiMetrics.TabContentPadding}" />
+  </Style>
+
+  <Style Selector="TextBlock.setting-label">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeSettingTextBrush}" />
+  </Style>
+
+  <Style Selector="TextBlock.setting-token">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontToken}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeTokenTextBrush}" />
+    <Setter Property="FontFamily" Value="{DynamicResource ThemeFontMonoFamily}" />
+  </Style>
+
+  <Style Selector="SelectableTextBlock">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+  </Style>
+
+  <Style Selector="TextBlock.setting-token.link">
+    <Setter Property="Cursor" Value="Hand" />
+  </Style>
+
+  <Style Selector="TextBlock.setting-token.setting-token-link">
+    <Setter Property="Cursor" Value="Hand" />
+  </Style>
+
+  <Style Selector="TextBlock.setting-token.setting-token-link:pointerover,
+                     TextBlock.setting-token.setting-token-link:pressed">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeLinkBrush}" />
+  </Style>
+
+  <Style Selector="Control.option-value">
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+
+  <Style Selector="Border.setting-input-frame">
+    <Setter Property="Background" Value="{DynamicResource ThemeCompositeControlBoxBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeCompositeControlBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Padding" Value="6,4" />
+  </Style>
+
+  <Style Selector="Border.setting-input-frame > ListBox">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+  </Style>
+
+  <Style Selector="Border.setting-input-frame ListBox /template/ Border#border">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+  <Style Selector="Border.setting-input-frame ListBox /template/ ScrollViewer#PART_ScrollViewer">
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+
+  <Style Selector="Border.setting-input-frame ListBox /template/ ScrollViewer#PART_ScrollViewer /template/ ScrollContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+
+  <Style Selector="Grid.option-value">
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+
+  <Style Selector="StackPanel.option-value">
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+
+</Styles>

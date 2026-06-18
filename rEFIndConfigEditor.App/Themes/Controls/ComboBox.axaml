@@ -1,0 +1,53 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <Style Selector="ComboBox">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="MinHeight" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Height" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Padding" Value="6,3" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeChoiceBoxTextBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeChoiceBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="ComboBox /template/ Panel">
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="ComboBox /template/ Panel > Border">
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="ComboBox:pointerover">
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="ComboBox:focus">
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="ComboBox /template/ Border#PART_BorderElement,
+                     ComboBox:pointerover /template/ Border#PART_BorderElement,
+                     ComboBox:focus /template/ Border#PART_BorderElement">
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="ComboBox:focus /template/ Border#PART_BorderElement">
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+  </Style>
+
+  <Style Selector="ComboBox /template/ Panel > Border:nth-child(2),
+                     ComboBox:pointerover /template/ Panel > Border:nth-child(2),
+                     ComboBox:focus /template/ Panel > Border:nth-child(2)">
+    <Setter Property="Background" Value="{DynamicResource ThemeChoiceBoxBgBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+</Styles>

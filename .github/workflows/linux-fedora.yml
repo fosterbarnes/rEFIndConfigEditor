@@ -1,0 +1,72 @@
+name: Fedora Linux
+
+on:
+  workflow_dispatch:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ${{ matrix.runs-on }}
+    container: fedora:44
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+    strategy:
+      matrix:
+        include:
+          - arch: x64
+            rpm_tag: amd64
+            runs-on: ubuntu-latest
+          - arch: arm64
+            rpm_tag: arm64
+            runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .nuget/packages
+          key: nuget-${{ hashFiles('**/*.csproj', '**/Directory.Build.props') }}
+          restore-keys: |
+            nuget-
+      - name: Install build dependencies
+        run: |
+          dnf install -y dotnet-sdk-10.0 rpm-build curl tar
+          case "$(uname -m)" in
+            aarch64) PWSH_ARCH=linux-arm64 ;;
+            x86_64)  PWSH_ARCH=linux-x64 ;;
+            *) echo "Unsupported architecture: $(uname -m)" >&2; exit 1 ;;
+          esac
+          PWSH_VERSION=7.5.2
+          curl -fsSL -o /tmp/powershell.tar.gz \
+            "https://github.com/PowerShell/PowerShell/releases/download/v${PWSH_VERSION}/powershell-${PWSH_VERSION}-${PWSH_ARCH}.tar.gz"
+          mkdir -p /opt/microsoft/powershell/7
+          tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
+          chmod +x /opt/microsoft/powershell/7/pwsh
+          ln -sf /opt/microsoft/powershell/7/pwsh /usr/local/bin/pwsh
+      - id: version
+        run: echo "value=$(tr -d '\r\n' < .version/version)" >> $GITHUB_OUTPUT
+      - name: Build release package
+        run: pwsh ./.scripts/.buildAll.ps1 -${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rEFIndConfigEditor_v${{ steps.version.outputs.value }}_fedora-${{ matrix.rpm_tag }}
+          path: publish/rEFIndConfigEditor_v${{ steps.version.outputs.value }}_fedora-${{ matrix.rpm_tag }}.rpm
+          if-no-files-found: error
+      - name: Add to latest release
+        if: inputs.add_to_latest_release
+        uses: ./.github/actions/upload-latest-release
+        with:
+          asset_path: publish/rEFIndConfigEditor_v${{ steps.version.outputs.value }}_fedora-${{ matrix.rpm_tag }}.rpm
+          gh_package: fedora

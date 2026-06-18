@@ -1,0 +1,133 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:rEFIndConfigEditor.ViewModels"
+        xmlns:ui="using:rEFIndConfigEditor.UI"
+        xmlns:core="using:rEFIndConfigEditor"
+        xmlns:controls="using:Avalonia.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="rEFIndConfigEditor.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        TextOptions.TextRenderingMode="SubpixelAntialias"
+        TextOptions.TextHintingMode="Strong"
+        TextOptions.BaselinePixelAlignment="Aligned"
+        Title="rEFInd Config Editor"
+        Width="{x:Static ui:UiMetrics.DefaultWidth}"
+        Height="{x:Static ui:UiMetrics.DefaultHeight}"
+        MinWidth="{x:Static ui:UiMetrics.MinWidth}"
+        MinHeight="{x:Static ui:UiMetrics.MinHeight}">
+
+  <DockPanel>
+    <Border Classes="app-status-bar" DockPanel.Dock="Bottom">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Grid.Column="0"
+                   Classes="status-text"
+                   Text="{Binding FilePath}"
+                   VerticalAlignment="Center" />
+        <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
+                    Spacing="{x:Static ui:UiMetrics.StatusFooterButtonSpacingPx}"
+                    VerticalAlignment="Center">
+          <TextBlock Text="*"
+                     Classes="status-text"
+                     VerticalAlignment="Center"
+                     IsVisible="{Binding IsDirty}" />
+          <Button Content="Open"
+                  Command="{Binding OpenFileCommand}" />
+          <Button Content="Save As"
+                  Command="{Binding SaveAsCommand}" />
+          <Button Content="Apply"
+                  Command="{Binding ApplyCommand}" />
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <Grid x:Name="TabHost" Margin="{x:Static ui:UiMetrics.TabFrameMargin}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid x:Name="MacChromeBar"
+            Grid.Row="0"
+            IsVisible="False"
+            Height="{x:Static ui:UiMetrics.TabStripHeight}"
+            Background="{DynamicResource ThemeTabStripBgBrush}"
+            ColumnDefinitions="78,*,Auto">
+        <Border x:Name="MacTabStripTrailingRule"
+                Grid.ColumnSpan="3"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Height="1"
+                Background="{DynamicResource ThemeTabBorderBrush}"
+                IsHitTestVisible="False"
+                IsVisible="False" />
+        <Grid Grid.Column="1" ColumnDefinitions="Auto,*">
+          <Border x:Name="MacTabDragRegion"
+                  Grid.ColumnSpan="2"
+                  Background="Transparent" />
+          <ListBox x:Name="MacTabHeaders"
+                   Grid.Column="0"
+                   Classes="mac-tab-headers"
+                   ItemsSource="{Binding TabItems}"
+                   SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}"
+                   HorizontalAlignment="Left"
+                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                   ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+              <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+              </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="controls:TabItem">
+                <TextBlock Text="{Binding Header}" />
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </Grid>
+      </Grid>
+
+      <Grid x:Name="TabContentHost" Grid.Row="1">
+        <TabControl x:Name="MainTabs"
+                    Classes="app-tabs"
+                    ZIndex="1"
+                    ItemsSource="{Binding TabItems}"
+                    SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}" />
+
+        <TextBox x:Name="SearchBox"
+                 Classes="app-search"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Right"
+                 Margin="{x:Static ui:UiMetrics.SearchBoxMargin}"
+                 PlaceholderText="Search"
+                 Text="{Binding SearchQuery, Mode=TwoWay}"
+                 IsVisible="{Binding SearchEnabled}" />
+
+        <Popup x:Name="SearchPopup"
+               IsLightDismissEnabled="True"
+               PlacementTarget="{Binding #SearchBox}"
+               Placement="Bottom">
+          <ListBox x:Name="SearchResults"
+                   MaxHeight="{x:Static ui:UiMetrics.SearchDropMaxHeight}"
+                   MinWidth="{x:Static ui:UiMetrics.SearchBoxWidth}">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="core:SettingSearchHit">
+                <TextBlock Text="{Binding DisplayText}" />
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </Popup>
+      </Grid>
+
+      <Border x:Name="TabStripTrailingRule"
+              Grid.Row="1"
+              VerticalAlignment="Top"
+              HorizontalAlignment="Left"
+              Height="1"
+              Background="{DynamicResource ThemeTabBorderBrush}"
+              IsHitTestVisible="False" />
+    </Grid>
+  </DockPanel>
+</Window>

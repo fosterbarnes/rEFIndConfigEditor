@@ -1,0 +1,16 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <Style Selector="Menu">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontMenu}" />
+    <Setter Property="Background" Value="{DynamicResource ThemeMenuBackBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMainTextBrush}" />
+  </Style>
+
+  <Style Selector="MenuItem">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontMenu}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMainTextBrush}" />
+  </Style>
+
+</Styles>

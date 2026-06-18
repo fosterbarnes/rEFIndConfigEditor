@@ -1,0 +1,152 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI"
+        xmlns:system="using:System">
+
+  <Style Selector="TextBox">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="MinHeight" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Height" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Padding" Value="6,3" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeStringBoxTextBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeStringBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="TextBox /template/ Panel">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox /template/ Panel > Border">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox /template/ ScrollViewer#PART_ScrollViewer">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox /template/ ScrollViewer#PART_ScrollViewer > Panel">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox:pointerover">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox:focus">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="TextBox:not(.numeric-inner) /template/ Border#PART_BorderElement,
+                     TextBox:not(.numeric-inner):pointerover /template/ Border#PART_BorderElement,
+                     TextBox:not(.numeric-inner):focus /template/ Border#PART_BorderElement">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="TextBox:not(.numeric-inner):focus /template/ Border#PART_BorderElement">
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+  </Style>
+
+  <Style Selector="TextBox:not(.numeric-inner) /template/ Panel > Border:nth-child(2),
+                     TextBox:not(.numeric-inner):pointerover /template/ Panel > Border:nth-child(2),
+                     TextBox:not(.numeric-inner):focus /template/ Panel > Border:nth-child(2)">
+    <Setter Property="Background" Value="{DynamicResource ThemeStringBoxBgBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+  <Style Selector="TextBox.numeric-inner">
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="Height" Value="{x:Static system:Double.NaN}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource ThemeNumberBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.numeric-inner:focus">
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource ThemeNumberBoxBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.numeric-inner /template/ Border#PART_BorderElement,
+                     TextBox.numeric-inner:focus /template/ Border#PART_BorderElement,
+                     TextBox.numeric-inner:pointerover /template/ Border#PART_BorderElement">
+    <Setter Property="Background" Value="{DynamicResource ThemeNumberBoxBgBrush}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+  <Style Selector="TextBox.numeric-inner /template/ Panel > Border:nth-child(2),
+                     TextBox.numeric-inner:focus /template/ Panel > Border:nth-child(2),
+                     TextBox.numeric-inner:pointerover /template/ Panel > Border:nth-child(2)">
+    <Setter Property="Background" Value="{DynamicResource ThemeNumberBoxBgBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+  <Style Selector="TextBox.app-search">
+    <Setter Property="MinHeight" Value="{x:Static ui:UiMetrics.SearchBoxHeight}" />
+    <Setter Property="Height" Value="{x:Static ui:UiMetrics.SearchBoxHeight}" />
+    <Setter Property="Width" Value="{x:Static ui:UiMetrics.SearchBoxWidth}" />
+    <Setter Property="Padding" Value="6,0" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeSearchTextBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeSearchBorderBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search /template/ Panel">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search /template/ Panel > Border">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search /template/ ScrollViewer#PART_ScrollViewer">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search /template/ ScrollViewer#PART_ScrollViewer > Panel">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search:pointerover">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search:focus">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search /template/ Border#PART_BorderElement,
+                     TextBox.app-search:pointerover /template/ Border#PART_BorderElement,
+                     TextBox.app-search:focus /template/ Border#PART_BorderElement">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+  </Style>
+
+  <Style Selector="TextBox.app-search:focus /template/ Border#PART_BorderElement">
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+  </Style>
+
+  <Style Selector="TextBox.app-search /template/ Panel > Border:nth-child(2),
+                     TextBox.app-search:pointerover /template/ Panel > Border:nth-child(2),
+                     TextBox.app-search:focus /template/ Panel > Border:nth-child(2)">
+    <Setter Property="Background" Value="{DynamicResource ThemeSearchBgBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+  <Style Selector="TextBox.raw-editor">
+    <Setter Property="MinHeight" Value="0" />
+    <Setter Property="Height" Value="{x:Static system:Double.NaN}" />
+    <Setter Property="AcceptsReturn" Value="True" />
+    <Setter Property="TextWrapping" Value="NoWrap" />
+    <Setter Property="FontFamily" Value="{DynamicResource ThemeFontMonoFamily}" />
+    <Setter Property="Padding" Value="6,4" />
+  </Style>
+
+</Styles>

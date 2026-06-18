@@ -1,0 +1,24 @@
+Name:           __PACKAGE__
+Version:        __VERSION__
+Release:        __RELEASE__%{?dist}
+Summary:        __SUMMARY__
+License:        __LICENSE__
+URL:            __URL__
+BuildArch:      __RPM_ARCH__
+Requires:       __REQUIRES__
+AutoReqProv:    no
+%global debug_package %{nil}
+
+%description
+__DESCRIPTION__
+
+%install
+rm -rf %{buildroot}
+mkdir -p %{buildroot}
+cp -a "__STAGING_DIR__/usr" %{buildroot}/
+
+%files
+/usr/lib/__PACKAGE__
+/usr/bin/__PACKAGE__
+/usr/share/applications/__PACKAGE__.desktop
+/usr/share/pixmaps/__PACKAGE__.png

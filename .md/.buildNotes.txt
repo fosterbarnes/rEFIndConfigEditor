@@ -1,4 +1,5 @@
-v1.0.1
+Support multiple platforms (windows, macOS & linux) (v1.1.0)
 
-- Fix version number in "About" tab
-- Fix screenshots in README
+- Use https://github.com/fosterbarnes/skeleton as a framework 
+- Migrate existing settings and functions to be based on 'skeleton'
+- Add workflows for building mac & linux binaries

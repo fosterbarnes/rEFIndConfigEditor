@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="rEFIndConfigEditor.Views.RefindLogImportWindow"
+        WindowStartupLocation="CenterOwner"
+        MinWidth="480"
+        MinHeight="280"
+        Width="640"
+        Height="360">
+  <DockPanel Margin="12">
+    <StackPanel DockPanel.Dock="Bottom"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Spacing="8"
+                Margin="0,12,0,0">
+      <Button Name="AcceptButton" MinWidth="90" />
+      <Button Name="CancelButton" Content="Cancel" MinWidth="90" IsCancel="True" />
+    </StackPanel>
+    <TextBlock Name="HintText"
+               DockPanel.Dock="Top"
+               TextWrapping="Wrap"
+               Margin="0,0,0,8" />
+    <ListBox Name="ItemList"
+             SelectionMode="Multiple" />
+  </DockPanel>
+</Window>

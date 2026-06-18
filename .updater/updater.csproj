@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType Condition="$(_IsWinRid)">WinExe</OutputType>
+    <OutputType Condition="!$(_IsWinRid)">Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>rEFIndConfigEditor.Updater</RootNamespace>
+    <AssemblyName>updater</AssemblyName>
+    <Platforms>AnyCPU;x64;x86;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
+    <ApplicationManifest Condition="$(_IsWinRid)">app.manifest</ApplicationManifest>
+    <ApplicationIcon Condition="$(_IsWinRid)">../.resources/icon/refind.ico</ApplicationIcon>
+    <Product>rEFInd Config Editor Updater</Product>
+    <Description>rEFInd Config Editor Updater</Description>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <VersionContents>$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)../.version/version').Trim())</VersionContents>
+    <Version>$(VersionContents)</Version>
+    <AssemblyVersion>$(VersionContents).0</AssemblyVersion>
+    <FileVersion>$(VersionContents).0</FileVersion>
+    <InformationalVersion>$(VersionContents)</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\rEFIndConfigEditor.Core\rEFIndConfigEditor.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Remove="Themes/**" />
+    <AvaloniaResource Include="Themes/**" />
+    <AvaloniaResource Include="../rEFIndConfigEditor.App/Themes/Controls/**/*" Link="Themes/Controls/%(RecursiveDir)%(Filename)%(Extension)" Exclude="../rEFIndConfigEditor.App/Themes/Controls/DataGrid.axaml;../rEFIndConfigEditor.App/Themes/Controls/MaterialIcon.axaml" />
+    <AvaloniaResource Include="../rEFIndConfigEditor.App/Themes/Palettes/**/*" Link="Themes/Palettes/%(RecursiveDir)%(Filename)%(Extension)" />
+    <Compile Include="..\rEFIndConfigEditor.App\UI\UiTheme.cs" Link="Shared\UiTheme.cs" />
+    <Compile Include="..\rEFIndConfigEditor.App\UI\UiMetrics.cs" Link="Shared\UiMetrics.cs" />
+    <Compile Include="..\rEFIndConfigEditor.App\UI\ThemeBrushKeys.cs" Link="Shared\ThemeBrushKeys.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.0.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.0.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.3" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.1" />
+  </ItemGroup>
+</Project>

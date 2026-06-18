@@ -1,0 +1,49 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <Style Selector="Button:not(HyperlinkButton)">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="MinHeight" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Height" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Padding" Value="10,2" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource ThemeButtonBgBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeButtonForegroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeButtonBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{DynamicResource ThemeButtonHoverBgBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+    </Style>
+
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeButtonHoverBgBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+    </Style>
+
+    <Style Selector="^:pressed">
+      <Setter Property="Background" Value="{DynamicResource ThemeButtonPressedBgBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+    </Style>
+
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeButtonPressedBgBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+    </Style>
+  </Style>
+
+  <Style Selector="Button.icon-btn">
+    <Setter Property="Padding" Value="4" />
+    <Setter Property="MinWidth" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Width" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+  </Style>
+
+  <Style Selector="Button.icon-text-btn">
+    <Setter Property="Padding" Value="8,2" />
+  </Style>
+
+</Styles>

@@ -4,6 +4,7 @@ obj/
 publish/
 .vs/
 /.installer/Output/
+/.installer/wizard/
 refind.conf
 .md/buildNotes.md
 .version/versionBuild

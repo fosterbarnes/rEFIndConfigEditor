@@ -1,0 +1,28 @@
+name: Release All Platforms
+
+on:
+  workflow_dispatch:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  macos:
+    uses: ./.github/workflows/macos.yml
+    with:
+      add_to_latest_release: ${{ inputs.add_to_latest_release }}
+
+  linux-debian:
+    uses: ./.github/workflows/linux-debian.yml
+    with:
+      add_to_latest_release: ${{ inputs.add_to_latest_release }}
+
+  linux-fedora:
+    uses: ./.github/workflows/linux-fedora.yml
+    with:
+      add_to_latest_release: ${{ inputs.add_to_latest_release }}

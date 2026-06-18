@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Double x:Key="ThemeFontBody">12</x:Double>
+  <x:Double x:Key="ThemeFontTab">12</x:Double>
+  <x:Double x:Key="ThemeFontToken">11</x:Double>
+  <x:Double x:Key="ThemeFontMenu">12</x:Double>
+  <x:Double x:Key="ThemeFontStatus">12</x:Double>
+  <x:Double x:Key="ThemeFontSection">12</x:Double>
+  <FontFamily x:Key="ThemeFontMainFamily">Segoe UI, Segoe UI Variable</FontFamily>
+  <FontFamily x:Key="ThemeFontMonoFamily">Consolas, monospace</FontFamily>
+</ResourceDictionary>

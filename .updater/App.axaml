@@ -1,0 +1,19 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:brand="using:rEFIndConfigEditor"
+             x:Class="rEFIndConfigEditor.Updater.App"
+             Name="{x:Static brand:AppBranding.UpdaterTitle}"
+             RequestedThemeVariant="Default">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://updater/Themes/Palettes/ThemeBrushes.axaml" />
+        <ResourceInclude Source="avares://updater/Themes/Palettes/ThemeFonts.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+  <Application.Styles>
+    <FluentTheme DensityStyle="Compact" />
+    <StyleInclude Source="avares://updater/Themes/AppTheme.axaml" />
+  </Application.Styles>
+</Application>

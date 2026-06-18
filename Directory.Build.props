@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <CopyrightYear>$([System.DateTime]::Now.ToString('yyyy'))</CopyrightYear>
+    <CopyrightHolder>Foster Barnes</CopyrightHolder>
+    <Copyright>Copyright © $(CopyrightYear) $(CopyrightHolder)</Copyright>
+    <Company>$(CopyrightHolder)</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <_IsWinRid Condition="'$(RuntimeIdentifier)' != ''">$([System.String]::Copy('$(RuntimeIdentifier)').StartsWith('win'))</_IsWinRid>
+    <_IsWinRid Condition="'$(RuntimeIdentifier)' == ''">$([MSBuild]::IsOSPlatform('Windows'))</_IsWinRid>
+  </PropertyGroup>
+</Project>

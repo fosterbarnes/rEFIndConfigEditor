@@ -1,0 +1,94 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType Condition="$(_IsWinRid)">WinExe</OutputType>
+    <OutputType Condition="!$(_IsWinRid)">Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>rEFIndConfigEditor</RootNamespace>
+    <AssemblyName>rEFIndConfigEditor</AssemblyName>
+    <Platforms>AnyCPU;x64;x86;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
+    <ApplicationManifest Condition="$(_IsWinRid)">app.manifest</ApplicationManifest>
+    <ApplicationIcon Condition="$(_IsWinRid)">../.resources/icon/refind.ico</ApplicationIcon>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <VersionContents>$([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)..\.version\version').Trim())</VersionContents>
+    <Version>$(VersionContents)</Version>
+    <AssemblyVersion>$(VersionContents).0</AssemblyVersion>
+    <FileVersion>$(VersionContents).0</FileVersion>
+    <InformationalVersion>$(VersionContents)</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <UpdaterProjectPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\.updater\updater.csproj'))</UpdaterProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+    <AvaloniaResource Include="Themes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="../.resources/icon/refind.ico" Link="Assets/refind.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../.resources/icon/refind256.png" Link="Assets/refind256.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../.resources/data/themes.json" Link="themes/themes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../.resources/themes/previews/*.png" Link="themes/previews/%(Filename)%(Extension)">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\rEFIndConfigEditor.Core\rEFIndConfigEditor.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="12.0.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.0.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.3" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="12.0.0" />
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.1">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.1" />
+    <PackageReference Include="Material.Icons.Avalonia" Version="3.0.2" />
+  </ItemGroup>
+
+  <Target Name="PublishUpdaterToOutput" AfterTargets="Build" Condition="'$(DesignTimeBuild)' != 'true' AND Exists('$(UpdaterProjectPath)') AND !$([MSBuild]::IsOSPlatform('Linux'))">
+    <PropertyGroup>
+      <_UpdaterRid Condition="'$(Platform)' == 'x86'">win-x86</_UpdaterRid>
+      <_UpdaterRid Condition="'$(Platform)' == 'x64' and $([MSBuild]::IsOSPlatform('Windows'))">win-x64</_UpdaterRid>
+      <_UpdaterRid Condition="'$(Platform)' == 'x64' and $([MSBuild]::IsOSPlatform('OSX'))">osx-x64</_UpdaterRid>
+      <_UpdaterRid Condition="'$(Platform)' == 'ARM64' and $([MSBuild]::IsOSPlatform('Windows'))">win-arm64</_UpdaterRid>
+      <_UpdaterRid Condition="'$(Platform)' == 'ARM64' and $([MSBuild]::IsOSPlatform('OSX'))">osx-arm64</_UpdaterRid>
+      <_UpdaterRid Condition="'$(_UpdaterRid)' == ''">$(NETCoreSdkRuntimeIdentifier)</_UpdaterRid>
+      <_UpdaterStagingDir>$([System.IO.Path]::Combine('$(IntermediateOutputPath)', 'updater-publish'))</_UpdaterStagingDir>
+      <_UpdaterPublishedHost>$([System.IO.Path]::Combine('$(_UpdaterStagingDir)', 'updater'))</_UpdaterPublishedHost>
+      <_UpdaterOutputHost>$([System.IO.Path]::Combine('$(OutputPath)', 'updater'))</_UpdaterOutputHost>
+    </PropertyGroup>
+    <RemoveDir Directories="$(_UpdaterStagingDir)" Condition="Exists('$(_UpdaterStagingDir)')" />
+    <MSBuild
+      Projects="$(UpdaterProjectPath)"
+      Targets="Restore"
+      Properties="Configuration=$(Configuration);Platform=$(Platform);RuntimeIdentifier=$(_UpdaterRid)" />
+    <MSBuild
+      Projects="$(UpdaterProjectPath)"
+      Targets="Publish"
+      Properties="Configuration=$(Configuration);Platform=$(Platform);RuntimeIdentifier=$(_UpdaterRid);AppendRuntimeIdentifierToOutputPath=false;PublishDir=$(_UpdaterStagingDir);SelfContained=false" />
+    <Copy
+      SourceFiles="$(_UpdaterStagingDir)\updater.exe"
+      DestinationFolder="$(OutputPath)"
+      SkipUnchangedFiles="true"
+      Condition="Exists('$(_UpdaterStagingDir)\updater.exe')" />
+    <Copy
+      SourceFiles="$(_UpdaterPublishedHost)"
+      DestinationFolder="$(OutputPath)"
+      SkipUnchangedFiles="true"
+      Condition="Exists('$(_UpdaterPublishedHost)')" />
+    <Exec
+      Condition="$([MSBuild]::IsOSPlatform('OSX')) and Exists('$(_UpdaterOutputHost)')"
+      Command="chmod +x &quot;$(_UpdaterOutputHost)&quot;" />
+  </Target>
+</Project>

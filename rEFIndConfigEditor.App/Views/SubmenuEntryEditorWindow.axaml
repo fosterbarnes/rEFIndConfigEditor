@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="rEFIndConfigEditor.Views.SubmenuEntryEditorWindow"
+        Width="460"
+        Height="520"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner">
+  <DockPanel Margin="12">
+    <StackPanel DockPanel.Dock="Bottom"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Spacing="8"
+                Margin="0,12,0,0">
+      <Button Name="OkButton" Content="OK" MinWidth="90" IsDefault="True" />
+      <Button Name="CancelButton" Content="Cancel" MinWidth="90" IsCancel="True" />
+    </StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+      <StackPanel Name="RootPanel" Spacing="8" />
+    </ScrollViewer>
+  </DockPanel>
+</Window>

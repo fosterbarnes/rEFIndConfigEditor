@@ -1,0 +1,239 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="using:rEFIndConfigEditor.UI">
+
+  <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMultiSelectBoxTextBrush}" />
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Template">
+      <ControlTemplate TargetType="CheckBox">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <Border x:Name="CheckBorder"
+                  Width="{x:Static ui:UiMetrics.ClassicGlyphSize}"
+                  Height="{x:Static ui:UiMetrics.ClassicGlyphSize}"
+                  Background="{DynamicResource ThemeCheckBoxBgBrush}"
+                  BorderBrush="{DynamicResource ThemeCheckBoxBorderBrush}"
+                  BorderThickness="1"
+                  CornerRadius="0">
+            <Path x:Name="CheckMark"
+                  Data="M0,4 L3,7 L8,0"
+                  Stroke="White"
+                  StrokeThickness="1.5"
+                  IsVisible="False"
+                  Stretch="None"
+                  Margin="1,2,0,0" />
+          </Border>
+          <ContentPresenter Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            RecognizesAccessKey="True"
+                            VerticalAlignment="Center" />
+        </StackPanel>
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:checked /template/ Border#CheckBorder">
+      <Setter Property="Background" Value="{DynamicResource ThemeActivatedCheckBoxBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeActivatedCheckBoxBrush}" />
+    </Style>
+    <Style Selector="^:checked /template/ Path#CheckMark">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.55" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type RadioButton}" TargetType="RadioButton">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeRadioGroupTextBrush}" />
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Template">
+      <ControlTemplate TargetType="RadioButton">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <Panel Width="{x:Static ui:UiMetrics.ClassicGlyphSize}"
+                 Height="{x:Static ui:UiMetrics.ClassicGlyphSize}">
+            <Ellipse Width="{x:Static ui:UiMetrics.ClassicGlyphSize}"
+                     Height="{x:Static ui:UiMetrics.ClassicGlyphSize}"
+                     Fill="{DynamicResource ThemeCheckBoxBgBrush}"
+                     Stroke="{DynamicResource ThemeRadioGroupBorderBrush}"
+                     StrokeThickness="1" />
+            <Ellipse x:Name="OptionMark"
+                     Width="7"
+                     Height="7"
+                     Fill="{DynamicResource ThemeActivatedCheckBoxBrush}"
+                     IsVisible="False"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center" />
+          </Panel>
+          <ContentPresenter Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            RecognizesAccessKey="True"
+                            VerticalAlignment="Center" />
+        </StackPanel>
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:checked /template/ Ellipse#OptionMark">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.55" />
+    </Style>
+  </ControlTheme>
+
+  <StreamGeometry x:Key="SpinnerIncreaseGlyph">M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z</StreamGeometry>
+  <StreamGeometry x:Key="SpinnerDecreaseGlyph">M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z</StreamGeometry>
+
+  <ControlTheme x:Key="SkeletonSpinnerRepeatButton" TargetType="RepeatButton">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter x:Name="PART_ContentPresenter"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          Content="{TemplateBinding Content}"
+                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Padding="{TemplateBinding Padding}"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeSurfaceBgBrush}" />
+    </Style>
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ThemeFieldBgBrush}" />
+    </Style>
+    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Opacity" Value="0.55" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
+    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+            <DockPanel>
+              <Border Name="PART_SpinnerDivider"
+                      TabIndex="2"
+                      DockPanel.Dock="Right"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="1,0,0,0"
+                      Width="{x:Static ui:UiMetrics.ControlHeight}"
+                      IsVisible="{TemplateBinding ShowButtonSpinner}">
+                <UniformGrid Name="PART_SpinnerPanel"
+                             Rows="2">
+                  <RepeatButton Name="PART_IncreaseButton"
+                                IsTabStop="{TemplateBinding IsTabStop}"
+                                Theme="{StaticResource SkeletonSpinnerRepeatButton}">
+                    <Path Width="8"
+                          Height="4"
+                          Data="{StaticResource SpinnerIncreaseGlyph}"
+                          Fill="{DynamicResource ThemeNumberBoxTextBrush}"
+                          Stretch="Uniform" />
+                  </RepeatButton>
+                  <RepeatButton Name="PART_DecreaseButton"
+                                IsTabStop="{TemplateBinding IsTabStop}"
+                                Theme="{StaticResource SkeletonSpinnerRepeatButton}">
+                    <Path Width="8"
+                          Height="4"
+                          Data="{StaticResource SpinnerDecreaseGlyph}"
+                          Fill="{DynamicResource ThemeNumberBoxTextBrush}"
+                          Stretch="Uniform" />
+                  </RepeatButton>
+                </UniformGrid>
+              </Border>
+              <ContentPresenter Name="PART_ContentPresenter"
+                                TabIndex="1"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </DockPanel>
+          </Border>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeNumberBoxBorderBrush}" />
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+    </Style>
+    <Style Selector="^:left /template/ Border#PART_SpinnerDivider">
+      <Setter Property="DockPanel.Dock" Value="Left" />
+      <Setter Property="BorderThickness" Value="0,0,1,0" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+    <Setter Property="MinHeight" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="Height" Value="{x:Static ui:UiMetrics.ControlHeight}" />
+    <Setter Property="MinWidth" Value="{x:Static ui:UiMetrics.WidthNumeric}" />
+    <Setter Property="Padding" Value="4,0,0,0" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource ThemeNumberBoxBgBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ThemeNumberBoxTextBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ThemeNumberBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="HorizontalAlignment" Value="Left" />
+    <Setter Property="HorizontalContentAlignment" Value="Left" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <ControlTemplate TargetType="NumericUpDown">
+        <DataValidationErrors>
+          <ButtonSpinner Name="PART_Spinner"
+                         Background="{TemplateBinding Background}"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         BorderThickness="{TemplateBinding BorderThickness}"
+                         CornerRadius="{TemplateBinding CornerRadius}"
+                         IsTabStop="False"
+                         Padding="0"
+                         MinWidth="0"
+                         AllowSpin="{TemplateBinding AllowSpin}"
+                         ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                         ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
+            <TextBox Name="PART_TextBox"
+                     Classes="numeric-inner"
+                     MinWidth="20"
+                     Padding="{TemplateBinding Padding}"
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="Transparent"
+                     BorderThickness="0"
+                     Foreground="{TemplateBinding Foreground}"
+                     PlaceholderText="{TemplateBinding PlaceholderText}"
+                     PlaceholderForeground="{TemplateBinding PlaceholderForeground}"
+                     IsReadOnly="{TemplateBinding IsReadOnly}"
+                     VerticalAlignment="Stretch"
+                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                     Text="{TemplateBinding Text}"
+                     TextAlignment="{TemplateBinding TextAlignment}"
+                     AcceptsReturn="False"
+                     TextWrapping="NoWrap"
+                     InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
+                     InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}" />
+          </ButtonSpinner>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:focus-within">
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>

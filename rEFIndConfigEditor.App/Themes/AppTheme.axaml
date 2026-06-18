@@ -1,0 +1,178 @@
+<Styles xmlns="https://github.com/avaloniaui"
+
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Styles.Resources>
+
+    <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+
+      <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+
+      <Setter Property="Foreground" Value="{DynamicResource ThemeEntryListTextBrush}" />
+
+      <Setter Property="Background" Value="{DynamicResource ThemeEntryListBgBrush}" />
+
+      <Setter Property="BorderBrush" Value="{DynamicResource ThemeEntryListBorderBrush}" />
+
+      <Setter Property="BorderThickness" Value="1" />
+
+      <Setter Property="CornerRadius" Value="0" />
+
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+
+      <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+
+      <Setter Property="ScrollViewer.IsScrollInertiaEnabled" Value="True" />
+
+      <Setter Property="Template">
+
+        <ControlTemplate TargetType="ListBox">
+
+          <Border Name="border"
+
+                  ClipToBounds="{TemplateBinding ClipToBounds}"
+
+                  Background="{DynamicResource ThemeEntryListBgBrush}"
+
+                  BorderBrush="{TemplateBinding BorderBrush}"
+
+                  BorderThickness="{TemplateBinding BorderThickness}"
+
+                  CornerRadius="{TemplateBinding CornerRadius}">
+
+            <ScrollViewer Name="PART_ScrollViewer"
+
+                          Background="{DynamicResource ThemeEntryListBgBrush}"
+
+                          VerticalSnapPointsType="{TemplateBinding (ScrollViewer.VerticalSnapPointsType)}"
+
+                          HorizontalSnapPointsType="{TemplateBinding (ScrollViewer.HorizontalSnapPointsType)}"
+
+                          HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+
+                          VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+
+                          IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+
+                          IsScrollInertiaEnabled="{TemplateBinding (ScrollViewer.IsScrollInertiaEnabled)}"
+
+                          IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}"
+
+                          AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+
+                          BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
+
+              <ItemsPresenter Name="PART_ItemsPresenter"
+
+                              ItemsPanel="{TemplateBinding ItemsPanel}"
+
+                              Margin="{TemplateBinding Padding}" />
+
+            </ScrollViewer>
+
+          </Border>
+
+        </ControlTemplate>
+
+      </Setter>
+
+    </ControlTheme>
+
+  </Styles.Resources>
+
+
+
+  <Style Selector="Window">
+
+    <Setter Property="Background" Value="{DynamicResource ThemeFormBgBrush}" />
+
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMainTextBrush}" />
+
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+
+    <Setter Property="FontFamily" Value="{DynamicResource ThemeFontMainFamily}" />
+
+  </Style>
+
+
+
+  <Style Selector="Window TextBlock">
+
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+
+  </Style>
+
+
+
+  <Style Selector="Window ListBox">
+
+    <Setter Property="FontSize" Value="{DynamicResource ThemeFontBody}" />
+
+  </Style>
+
+
+
+  <Style Selector="Window.mac-unified-chrome WindowDrawnDecorations /template/ Panel#PART_TitleTextPanel > TextBlock">
+
+    <Setter Property="IsVisible" Value="False" />
+
+  </Style>
+
+
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/Button.axaml" />
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/HyperlinkButton.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/MaterialIcon.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/TextBox.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/ComboBox.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/CheckBox.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/ListBox.axaml" />
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/DataGrid.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/Menu.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/ScrollViewer.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/GroupBox.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/StatusBar.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/SettingsRow.axaml" />
+
+  <StyleInclude Source="avares://rEFIndConfigEditor/Themes/Controls/TabControl.axaml" />
+
+
+
+  <Style Selector="TabItem /template/ Border#PART_SelectedPipe">
+
+    <Setter Property="IsVisible" Value="False" />
+
+    <Setter Property="Height" Value="0" />
+
+    <Setter Property="Opacity" Value="0" />
+
+  </Style>
+
+
+
+  <Style Selector="TabStripItem /template/ Border#PART_SelectedPipe">
+
+    <Setter Property="IsVisible" Value="False" />
+
+    <Setter Property="Height" Value="0" />
+
+    <Setter Property="Opacity" Value="0" />
+
+  </Style>
+
+
+
+</Styles>
+

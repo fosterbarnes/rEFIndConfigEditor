@@ -1,0 +1,64 @@
+name: Debian Linux
+
+on:
+  workflow_dispatch:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      add_to_latest_release:
+        description: Add to latest release
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: debian:13
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+    strategy:
+      matrix:
+        include:
+          - arch: x64
+            deb_tag: amd64
+          - arch: arm64
+            deb_tag: arm64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .nuget/packages
+          key: nuget-${{ hashFiles('**/*.csproj', '**/Directory.Build.props') }}
+          restore-keys: |
+            nuget-
+      - name: Install build dependencies
+        run: |
+          apt-get update
+          apt-get install -y wget ca-certificates
+          wget https://packages.microsoft.com/config/debian/13/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+          dpkg -i packages-microsoft-prod.deb
+          rm packages-microsoft-prod.deb
+          apt-get update
+          apt-get install -y dotnet-sdk-10.0 dpkg-dev powershell zenity
+      - id: version
+        run: echo "value=$(tr -d '\r\n' < .version/version)" >> $GITHUB_OUTPUT
+      - name: Build release package
+        run: pwsh ./.scripts/.buildAll.ps1 -${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rEFIndConfigEditor_v${{ steps.version.outputs.value }}_debian-${{ matrix.deb_tag }}
+          path: publish/rEFIndConfigEditor_v${{ steps.version.outputs.value }}_debian-${{ matrix.deb_tag }}.deb
+          if-no-files-found: error
+      - name: Add to latest release
+        if: inputs.add_to_latest_release
+        uses: ./.github/actions/upload-latest-release
+        with:
+          asset_path: publish/rEFIndConfigEditor_v${{ steps.version.outputs.value }}_debian-${{ matrix.deb_tag }}.deb
+          gh_package: debian

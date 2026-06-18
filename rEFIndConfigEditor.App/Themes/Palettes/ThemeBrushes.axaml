@@ -1,0 +1,64 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Palette groups (Light theme defaults) -->
+  <SolidColorBrush x:Key="ThemeMainBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeMainTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeInputBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeFieldBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeFormBgBrush" Color="#F0F0F0" />
+  <SolidColorBrush x:Key="ThemeSurfaceBgBrush" Color="#E8E8E8" />
+  <SolidColorBrush x:Key="ThemeMutedTextBrush" Color="#666666" />
+  <SolidColorBrush x:Key="ThemeAccentBrush" Color="#0078D4" />
+  <SolidColorBrush x:Key="ThemeLinkBrush" Color="#0066CC" />
+  <SolidColorBrush x:Key="ThemeLinkHoverBrush" Color="#004E9A" />
+  <SolidColorBrush x:Key="ThemeMenuBackBrush" Color="#F0F0F0" />
+
+  <!-- Tab state backgrounds -->
+  <SolidColorBrush x:Key="ThemeTabStripBgBrush" Color="#F0F0F0" />
+  <SolidColorBrush x:Key="ThemeTabHeaderBgBrush" Color="#E8E8E8" />
+  <SolidColorBrush x:Key="ThemeTabSelectedBgBrush" Color="#F0F0F0" />
+  <SolidColorBrush x:Key="ThemeTabHoverBgBrush" Color="#E2E1E1" />
+
+  <!-- Border roles -->
+  <SolidColorBrush x:Key="ThemeTabBorderBrush" Color="#A0A0A0" />
+  <SolidColorBrush x:Key="ThemeSearchBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeCheckBoxBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeNumberBoxBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeChoiceBoxBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeMultiSelectBoxBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeStringBoxBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeButtonBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeCompositeControlBoxBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeEntryListBorderBrush" Color="#ADADAD" />
+  <SolidColorBrush x:Key="ThemeRadioGroupBorderBrush" Color="#ADADAD" />
+
+  <!-- Text roles -->
+  <SolidColorBrush x:Key="ThemeTabTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeSearchTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeSettingTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeTokenTextBrush" Color="#0066CC" />
+  <SolidColorBrush x:Key="ThemeNumberBoxTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeChoiceBoxTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeMultiSelectBoxTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeStringBoxTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeButtonForegroundBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeCompositeControlBoxTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeEntryListTextBrush" Color="#000000" />
+  <SolidColorBrush x:Key="ThemeRadioGroupTextBrush" Color="#000000" />
+
+  <!-- Background roles -->
+  <SolidColorBrush x:Key="ThemeTabBgBrush" Color="#E8E8E8" />
+  <SolidColorBrush x:Key="ThemeSearchBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeCheckBoxBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeActivatedCheckBoxBrush" Color="#0078D4" />
+  <SolidColorBrush x:Key="ThemeNumberBoxBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeChoiceBoxBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeMultiSelectBoxBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeStringBoxBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeButtonBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeButtonHoverBgBrush" Color="#DBECF9" />
+  <SolidColorBrush x:Key="ThemeButtonPressedBgBrush" Color="#C1DEF4" />
+  <SolidColorBrush x:Key="ThemeCompositeControlBoxBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeEntryListBgBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="ThemeRadioGroupBgBrush" Color="Transparent" />
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=rEFInd Config Editor
+Comment=GUI editor for rEFInd refind.conf
+Icon=rEFIndConfigEditor
+Exec=rEFIndConfigEditor
+StartupWMClass=rEFIndConfigEditor
+Terminal=false
+Type=Application
+Categories=Utility;
+GenericName=rEFInd Config Editor

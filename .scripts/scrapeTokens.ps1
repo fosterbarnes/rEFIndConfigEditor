@@ -124,7 +124,7 @@ foreach ($sectionName in $sections.Keys) {
     foreach ($row in $sections[$sectionName].Rows) {
         $anchor = ''
         if ($seenAnchors.Add($row.Canonical)) {
-            $anchor = "<a id=`"$($row.Canonical)`"></a>"
+            $anchor = "<a name=`"$($row.Canonical)`"></a>"
         }
         $tokenCell = "$anchor``$($row.Canonical)``"
         [void]$sb.AppendLine("| $tokenCell | $($row.Parameters) | $($row.Explanation) |")

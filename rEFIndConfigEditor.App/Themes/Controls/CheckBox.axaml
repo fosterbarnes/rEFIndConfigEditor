@@ -1,0 +1,12 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style Selector="CheckBox">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMultiSelectBoxTextBrush}" />
+  </Style>
+
+  <Style Selector="CheckBox.option-value">
+    <Setter Property="Foreground" Value="{DynamicResource ThemeMultiSelectBoxTextBrush}" />
+  </Style>
+
+</Styles>

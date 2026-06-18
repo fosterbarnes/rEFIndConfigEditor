@@ -1,0 +1,12 @@
+Package: __PACKAGE__
+Version: __VERSION__
+Section: utils
+Priority: optional
+Architecture: __DEB_ARCH__
+Installed-Size: __INSTALLED_SIZE_KB__
+Depends: libx11-6, libice6, libsm6, libfontconfig1, dotnet-runtime-deps-10.0
+Recommends: dotnet-runtime-10.0
+Maintainer: __MAINTAINER__
+Homepage: __HOMEPAGE__
+Description: __DESCRIPTION__
+ __EXTENDED_DESCRIPTION__
