@@ -74,8 +74,6 @@ linuxArm64Rpm = https://github.com/fosterbarnes/rEFIndConfigEditor/releases/down
 <a href="https://github.com/fosterbarnes/rEFIndConfigEditor/releases/download/v1.1.0/rEFIndConfigEditor_v1.1.0_macOS-arm.zip"><img src="./.resources/svg/download_appleArm.svg" width="180" height="auto" alt="Apple Silicon portable"/></a></td>
 </tr></tbody></table>
 
-> macOS and Linux packages ship with the next Avalonia release; Windows v1.0.0 links above remain current.
-
 ### Debian Linux (Debian 12–13, Ubuntu 24.04–26.04)
 
 <details>
@@ -199,11 +197,7 @@ sudo dnf install ./rEFIndConfigEditor_v1.1.0_fedora-arm64.rpm
 |:---:|
 | ![Light](./.resources/scr/10.png) |
 
-| <h3>Dracula Light</h3> |
-|:---:|
-| ![Light](./.resources/scr/11.png) |
-
-| <h3>Dracula Dark</h3> |
+| <h3>Dracula</h3> |
 |:---:|
 | ![Light](./.resources/scr/12.png) |
 
@@ -212,7 +206,10 @@ sudo dnf install ./rEFIndConfigEditor_v1.1.0_fedora-arm64.rpm
 
 ## Compatibility
 
-| Platform  | Architecture   |
+| Platform  | Architecture |
 |------------|-----------------|
 | Windows 10 | x86, x64, arm64 |
 | Windows 11 | x86, x64, arm64 |
+| macOS      | x64, arm64      |
+| Debian Linux | x64, arm64    |
+| Fedora Linux | x64, arm64    |
