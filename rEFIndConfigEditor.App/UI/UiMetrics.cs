@@ -5,12 +5,12 @@ namespace rEFIndConfigEditor.UI;
 internal static class UiMetrics
 {
     public const int BaselineDpi = 96;
-    public const int DefaultWidthWindows = 820;
+    public const int DefaultWidthWindows = 875;
     public const int DefaultWidthMac = 700;
     public const int DefaultHeightWindows = 649;
     public const int DefaultHeightMac = 635;
     public const int MinWidthWindows = 820;
-    public const int MinWidthMac = 700;
+    public const int MinWidthMac = 875;
     public const int MinHeightWindows = 200;
     public const int MinHeightMac = 200;
     public static double DefaultWidth => OperatingSystem.IsMacOS() ? DefaultWidthMac : DefaultWidthWindows;

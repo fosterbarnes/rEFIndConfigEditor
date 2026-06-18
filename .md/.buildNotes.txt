@@ -1,5 +1,4 @@
-Support multiple platforms (windows, macOS & linux) (v1.1.0)
+macOS fixes
 
-- Use https://github.com/fosterbarnes/skeleton as a framework 
-- Migrate existing settings and functions to be based on 'skeleton'
-- Add workflows for building mac & linux binaries
+- Change macOS window size defaults and minimums
+- Add missing .icns
